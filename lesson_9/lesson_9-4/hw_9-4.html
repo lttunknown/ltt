@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+    }
+    .grid{
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr 1fr 0.5fr 0.5fr 1fr 1fr;
+      grid-template-areas:
+            'header header'
+            'content-1 spam-1'
+            'content-2 spam-1'
+            'content-2 spam-2'
+            'content-3 spam-2'
+            'footer footer';
+
+    }
+    .grid header{
+      grid-area: header;
+      background: #8D8484;
+    }
+    .grid section:nth-child(2){
+      grid-area: content-1;
+      background: #776969;
+    }
+    .grid section:nth-child(3){
+      grid-area: content-2;
+      background: #643030;
+    }
+    .grid section:nth-child(4){
+      grid-area: content-3;
+      background: #441818;
+    }
+    .grid aside:nth-child(5){
+      grid-area: spam-1;
+      background: #937575;
+    }
+    .grid aside:nth-child(6){
+      grid-area: spam-2;
+      background: #644C4C;
+    }
+    .grid footer{
+      grid-area: footer;
+      background: #BDBDBD;
+    }
+    header, section, aside, footer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section, aside{
+      color: #FFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    header, footer{
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  </style>
+</head>
+<body>
+
+<div class="grid">
+  <header><p>Header</p></header>
+  <section class="main__contents-content-1"><p>Content-1</p></section>
+  <section class="main__contents-content-2"><p>Content-2</p></section>
+  <section class="main__contents-content-3"><p>Content-3</p></section>
+  <aside class="main__spam-1"><p>spam-1</p></aside>
+  <aside class="main__spam-2"><p>spam-2</p></aside>
+  <footer><p>footer</p></footer>
+</div>
+
+</body>
+</html>
